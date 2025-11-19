@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   description: "Mecanismo estudiantil para apoyar a la comunidad académica UTP",
   icons: {
     icon: "/logotipo.png",
+    shortcut: "/logotipo.png",
+    apple: "/logotipo.png",
   },
 };
 
