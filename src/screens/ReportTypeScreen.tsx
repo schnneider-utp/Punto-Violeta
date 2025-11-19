@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export default function ReportTypeScreen() {
   return (
-    <div className="min-h-screen">
-      <div className="container py-12">
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="container w-full max-w-2xl py-12 text-center">
         <h2 className="text-3xl font-semibold text-[var(--alabaster-grey)] mb-6">Selecciona el tipo de formulario</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
           <Link href="/report/anonymous" className="card p-8 hover:shadow-md transition">
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 rounded-full bg-[var(--royal-plum)]" />
