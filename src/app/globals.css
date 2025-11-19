@@ -34,13 +34,19 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  height: 48px;
+  gap: 10px;
+  height: 56px;
   border-radius: 9999px;
-  padding: 0 20px;
-  background: var(--royal-plum);
+  padding: 0 28px;
+  background: linear-gradient(135deg, var(--royal-plum), var(--blackberry-cream));
   color: var(--alabaster-grey);
-  transition: transform 0.1s ease, opacity 0.2s ease, background 0.2s ease;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.16s ease, box-shadow 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  will-change: transform, box-shadow, opacity;
 }
 
 .card {
@@ -50,9 +56,30 @@ body {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-.btn-primary:hover { opacity: 0.95; }
+.card-select { transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s ease; will-change: transform; transform-origin: 50% 50%; }
+.card-select:hover { transform: scale(1.03); box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12); }
+.card-select:active { transform: scale(1.01); }
+
+.btn-primary:hover { opacity: 0.98; transform: translateY(-1px) scale(1.02); box-shadow: 0 10px 24px rgba(137, 49, 104, 0.25); }
 .btn-primary:active { transform: translateY(1px); }
+
+.btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(137, 49, 104, 0.35); }
+
 
 .gradient-page {
   background: radial-gradient(1200px 600px at 10% 10%, var(--alabaster-grey) 0%, var(--blackberry-cream) 40%, var(--midnight-violet) 85%);
 }
+.btn-6 { position: relative; overflow: hidden; isolation: isolate; }
+.btn-6 .btn-label { position: relative; z-index: 1; }
+.btn-6 .ripple {
+  position: absolute;
+  top: var(--ripple-y, 50%);
+  left: var(--ripple-x, 50%);
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+}
+.btn-6:hover .ripple { width: 225%; height: 225%; }

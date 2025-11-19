@@ -7,7 +7,7 @@ export default function ReportTypeScreen() {
       <div className="container w-full max-w-2xl py-12 text-center">
         <h2 className="text-3xl font-semibold text-[var(--alabaster-grey)] mb-6">Selecciona el tipo de formulario</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
-          <Link href="/report/anonymous" className="card p-8 hover:shadow-md transition">
+          <Link href="/report/anonymous" className="card card-select p-8">
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 rounded-full bg-[var(--royal-plum)]" />
               <div>
@@ -16,7 +16,7 @@ export default function ReportTypeScreen() {
               </div>
             </div>
           </Link>
-          <Link href="/report/identified" className="card p-8 hover:shadow-md transition">
+          <Link href="/report/identified" className="card card-select p-8">
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 rounded-full bg-[var(--blackberry-cream)]" />
               <div>
