@@ -46,8 +46,8 @@ export default function AnonymousForm() {
   }
 
   return (
-    <div className="min-h-screen">
-      <form onSubmit={onSubmit} className="container max-w-xl py-12">
+    <div className="min-h-screen flex items-center justify-center">
+      <form onSubmit={onSubmit} className="container w-full max-w-xl py-12">
         <div className="card p-8">
           <h2 className="text-2xl font-semibold text-[var(--midnight-violet)] mb-6">Datos sobre la gestión de la denuncia</h2>
           <div className="flex flex-col gap-4 max-h-[70vh] overflow-y-auto pr-2">

@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Punto Violeta UTP",
   description: "Mecanismo estudiantil para apoyar a la comunidad académica UTP",
+  icons: {
+    icon: "/logotipo.png",
+  },
 };
 
 export default function RootLayout({
