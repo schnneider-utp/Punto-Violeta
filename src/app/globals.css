@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #eaeaea;
+  --foreground: #2e1c2b;
+  --alabaster-grey: #eaeaea;
+  --royal-plum: #893168;
+  --blackberry-cream: #4a1942;
+  --midnight-violet: #2e1c2b;
+  --black: #050404;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* theme variables referenced directly via CSS custom properties */
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #050404;
+    --foreground: #eaeaea;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  border-radius: 9999px;
+  padding: 0 20px;
+  background: var(--royal-plum);
+  color: var(--alabaster-grey);
+  transition: transform 0.1s ease, opacity 0.2s ease, background 0.2s ease;
+}
+
+.card {
+  border-radius: 16px;
+  border: 1px solid rgba(137, 49, 104, 0.18);
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.btn-primary:hover { opacity: 0.95; }
+.btn-primary:active { transform: translateY(1px); }
+
+.gradient-page {
+  background: radial-gradient(1200px 600px at 10% 10%, var(--alabaster-grey) 0%, var(--blackberry-cream) 40%, var(--midnight-violet) 85%);
 }
