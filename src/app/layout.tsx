@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="min-h-screen gradient-page relative overflow-hidden">
+        <div className="min-h-screen gradient-page relative overflow-hidden" style={{ perspective: "1200px" }}>
           <RouteTransition>{children}</RouteTransition>
         </div>
       </body>

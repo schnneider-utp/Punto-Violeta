@@ -1,22 +1,22 @@
 "use client";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function RouteTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const initialX = "-100%";
+  const initialRotate = 3;
+  const initialScale = 0.995;
 
   return (
-    <AnimatePresence mode="popLayout" initial={false}>
-      <motion.div
-        key={pathname}
-        initial={{ opacity: 0, x: 48 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -48 }}
-        transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
-        style={{ willChange: "transform, opacity", position: "absolute", inset: 0 }}
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <motion.div
+      key={pathname}
+      initial={{ x: initialX, rotateY: initialRotate, scale: initialScale }}
+      animate={{ x: 0, rotateY: 0, scale: 1 }}
+      transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
+      style={{ willChange: "transform", position: "absolute", inset: 0, transformStyle: "preserve-3d", transformOrigin: "50% 50%" }}
+    >
+      {children}
+    </motion.div>
   );
 }
