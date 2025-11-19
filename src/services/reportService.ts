@@ -1,7 +1,12 @@
 type ReportPayload = {
   type: "anonymous" | "identified";
-  title: string;
   description: string;
+  location: string;
+  occurredAt?: string;
+  hasWitnesses?: boolean;
+  situationTypes: string[];
+  relationship: string;
+  urgency: "baja" | "media" | "alta";
   code?: string;
 };
 
